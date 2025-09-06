@@ -1,6 +1,6 @@
-# Welcome to your Expo app 👋
+# Welcome My MOVIE APP👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+I try to make a movie app where you can install the apk of the app and watch movies which are free on the internet. 
 
 ## Get started
 
