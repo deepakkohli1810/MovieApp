@@ -55,10 +55,11 @@ export default function App() {
               </Text>
             </View>
           ) : (
-            <View className="flex-1 mt-5">
+            <View className="flex-1 mt-5 ">
               <SearchBar 
                 onPress={() => router.push("/search")}
                 placeholder="Search for a movie"
+                
               />
 
               <Text className="font-bold mb-5 text-lg mt-5">Latest Movies</Text>

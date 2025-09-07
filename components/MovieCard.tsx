@@ -14,25 +14,12 @@ interface OMDBMovie {
 Rated?:string;
 }
 
-const MovieCard = ({ imdbID, Title, Poster, imdbRating, Genre, Rated }: OMDBMovie) => {
- const getDisplayRating = () => {
-    if (!imdbRating || imdbRating === 'N/A' || imdbRating === 'null') {
-      return null;
-    }
-    
-    const rating = parseFloat(imdbRating);
-    if (isNaN(rating)) {
-      return null;
-    }
-    
-    return rating.toFixed(1);
-  };
+const MovieCard = ({ imdbID, Title, Poster, imdbRating, Genre, Rated ,Year}: OMDBMovie) => {
 
 
-  const displayRating = getDisplayRating();
-   console.log('Movie data:', {
-    imdbID, Title, Poster, imdbRating, Genre, Rated 
-  });
+  //  console.log('Movie data:', {
+  //   imdbID, Title, Poster, imdbRating, Genre, Rated 
+  // });
 
     const renderRating = () =>{ if (!imdbRating || imdbRating === 'N/A' || imdbRating === 'null' || imdbRating === '') {
       return (
@@ -63,17 +50,29 @@ const MovieCard = ({ imdbID, Title, Poster, imdbRating, Genre, Rated }: OMDBMovi
           className='w-full h-52 rounded-lg'
           resizeMode='cover'
         />
-      <Text className='text-sm font-bold mt-1' >{Title}</Text>
+      <Text className='text-sm font-bold mt-1' numberOfLines={1} > {Title}</Text>
         <View className='flex-row items-center justify-start gap-x-1'>
           <Image
           source={icons.star}
           />
          <View className='flex-row items-center justify-start mt-1'>
           {renderRating()}
+        
         </View>
+        
+
+       
 
         </View>
+      
+  <View className='flex-row items-center justify-start mt-1'>
+     <Text className='text-sm text-gray-600'>
+      Release :  {Year}
+          </Text>
+           </View>
+
       </TouchableOpacity>
+      
     </Link>
   )
 }
